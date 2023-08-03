@@ -33,24 +33,42 @@ Compile the main.cpp and classes files using the C++17 compiler and link with Op
 <h4>bash</h4>
     
     g++ -o main main.cpp classes/image_converter.cpp classes/video_converter.cpp classes/audio_converter.cpp -I/path_to_opencv_include -L/path_to_opencv_lib -lopencv_world -lstdc++fs
+or
+
+<h4>bash</h4> 
+    
+    g++ -o main main.cpp classes/image_converter.cpp classes/video_converter.cpp classes/audio_converter.cpp `pkg-config --cflags --libs opencv4` -lstdc++fs
+
+<hr>
+In Windows, you can use the following command to compile the code with the g++ compiler:
 
 
-Run the executable "main" on your terminal or command prompt.
+<h4>bash</h4> 
+    
+    g++ -o main main.cpp classes/image_converter.cpp classes/video_converter.cpp classes/audio_converter.cpp -I"C:\path_to_opencv_include" -L"C:\path_to_opencv_lib" -lopencv_world451 -lstdc++fs
+
+Replace "C:\path_to_opencv_include" with the actual path to the OpenCV include directory and "C:\path_to_opencv_lib" with the actual path to the OpenCV library directory on your system.<br>
+
+Note: Make sure to use backslashes \ for directory paths in Windows, and if there are spaces in the paths, enclose the entire path in double quotes as shown above. Additionally, you may need to adjust the version number in -lopencv_world451 to match the version of OpenCV you have installed.<br>
+<hr>
+Run the executable "main" on your terminal or command prompt.<br>
 <h4>bash</h4>
 
     ./main
 
-Follow the on-screen instructions to choose the file type you want to convert (image, video, or audio) and provide the necessary input.
+
+Put the files you want to convert inside input_file folder and get the converted file inside of the output_file folder.<br>
+Follow the on-screen instructions to choose the file type you want to convert (image, video, or audio) and provide the necessary input.<br>
 
 
 <h2>Contributing:</h2>
 
-Contributions are welcome! If you find any issues, have suggestions, or want to add new features, feel free to open an issue or submit a pull request.
+Contributions are welcome! If you find any issues, have suggestions, or want to add new features, feel free to open an issue or submit a pull request.<br>
 
 
 <h2>License:</h2>
 
-This project is licensed under the MIT License. Feel free to use, modify, and distribute the code as per the terms of the license.
+This project is licensed under the MIT License. Feel free to use, modify, and distribute the code as per the terms of the license.<br>
 
 
 <h2>Disclaimer:</h2>
